@@ -4,6 +4,7 @@
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="csrf-token" content="{{ csrf_token() }}" />    
 		<meta name="apple-touch-fullscreen" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="default">
         <title>@yield('title')</title>
@@ -27,7 +28,6 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/vendor/fonts/materialdesignicons/materialdesignicons.min.css')}}">
 		<!--Bootstrap + atmos Admin CSS-->
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/vendor/css/atmos.min.css')}}">
-		@yield('scrpt')
         </head>
 	<!--body with default sidebar pinned -->
 	<body class="sidebar-pinned">
@@ -59,6 +59,7 @@
 		<script src="{{asset('js/vendor/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 		<script src="{{asset('js/vendor/js/atmos.min.js')}}"></script>
 
+		@yield('scrpt')
 		
 @yield('li')
 </html>

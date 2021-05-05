@@ -13,7 +13,7 @@ $factory->define(Exam::class, function (Faker $faker) {
         'max_questions' => $faker->randomDigit,
         'max_marks' => $faker->randomDigit,
         'start_date_time' =>$faker->dateTimeThisYear,
-        'end_date_time' =>$faker->dateTimeThisYear,
+        'end_date_time' => Carbon\Carbon::now()->addMonths(5)->format('Y-m-d H:i:s'),
 
     ];
 });

@@ -18,7 +18,7 @@ class CreateOptionsTable extends Migration
             
             $table->unsignedBigInteger('question_id');
             $table->string('option_description');
-            $table->tinyInteger('is_correct', 1);
+            $table->boolean('is_correct')->default(1);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
 

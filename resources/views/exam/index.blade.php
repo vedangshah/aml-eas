@@ -119,7 +119,7 @@
                                                                     
                                                                     </a>
                                                                 @else
-                                                                    <a href="{{ route('enroll-user', $exam->id) }}" class="btn btn-primary m-b-15 ml-2 mr-2">
+                                                                    <a href="{{ route('verifyUser', $exam->id) }}" class="btn btn-primary m-b-15 ml-2 mr-2">
                                                                     start exam
                                                                     </a>    
                                                                 @endif

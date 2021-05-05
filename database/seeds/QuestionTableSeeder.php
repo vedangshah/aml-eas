@@ -29,6 +29,53 @@ class QuestionTableSeeder extends Seeder
 
             
         }
-        
+
+        /* DB::table('questions')->insert([
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+            ['exam_id' => 1, 'description' => 'This is easy question', 'difficulty_levels_id' => '1'],
+
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+            ['exam_id' => 1, 'description' => 'This is medium question', 'difficulty_levels_id' => '2'],
+
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+            ['exam_id' => 1, 'description' => 'This is hard question', 'difficulty_levels_id' => '3'],
+        ]); */
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Log;
 use DB;
+use Str;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -71,15 +72,23 @@ class signupController extends Controller
             // 'profile'=> 'bail|required'
         ], $messages);
 
-        if($validator->fails()) {
-            return redirect()->back()
-                            ->withErrors($validator)
-                            ->withInput();
-        }
+        // if($validator->fails()) {
+        //     return redirect()->back()
+        //                     ->withErrors($validator)
+        //                     ->withInput();
+        // }
 
 
         DB::beginTransaction();
         try {
+
+            $profilePic = $request->profile;
+
+            $extension = $profilePic->getClientOriginalExtension();
+
+            $new_name = Str::random(10).rand(99999,999999).'.'.$extension;
+            $profilePic->move(public_path('profile-photos'), $new_name);
+
             $jobseeker = new User();
             $jobseeker->name = $request->jobseeker_name;
             $jobseeker->email = $request->jobseeker_email;
@@ -88,8 +97,7 @@ class signupController extends Controller
             $jobseeker->company_name = $request->user_name;
             $jobseeker->password = $request->jobseeker_password;
             $jobseeker->address = $request->jobseeker_address;
-            $jobseeker->profile_picture = 'temp';
-            
+            $jobseeker->profile_picture = 'profile-photos\\'.$new_name;
             $executeQuery = $jobseeker->save();
             
             if ($executeQuery) {

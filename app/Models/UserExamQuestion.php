@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserExamQuestion extends Model
 {
+    public $timestamps = false;
     protected $table = 'user_exam_questions';
 
     // Fetch all questions for each user for a specific exam

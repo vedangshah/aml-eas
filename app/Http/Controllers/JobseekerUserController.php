@@ -248,5 +248,35 @@ class JobseekerUserController extends Controller
         return redirect()->back();
     }
 
+
+    // public function verifyUser($examId)
+    // {
+    //     return view('verify-jobseeker');
+        /* try
+        {
+
+        }
+        catch (\Exception\Database\QueryException $e)
+        {
+            Log::info('There was an error while fetching user profile-photo for user id: '.auth()->user()->id);
+            Log::info('Query: '.$e->getSql());
+            Log::info('Query: Bindings: '.$e->getBindings());
+            Log::info('Error: Code: '.$e->getCode());
+            Log::info('Error: Message: '.$e->getMessage());
+
+            Session::flash('error', 'Internal Server Error. Could not start verification process. Please try again later.');
+            return redirect()->back();
+        }
+        catch (\Exception $e)
+        {
+            Log::info('There was an error while fetching user profile-photo for user id: '.auth()->user()->id);
+            Log::info('Error: Code: '.$e->getCode());
+            Log::info('Error: Message: '.$e->getMessage());
+
+            Session::flash('error', 'Internal Server Error. Could not start verification process. Please try again later.');
+            return redirect()->back();
+        } */
+    // }
+
    
 }

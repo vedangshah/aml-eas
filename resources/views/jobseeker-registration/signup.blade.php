@@ -45,7 +45,7 @@
             <div class="col-lg-6  bg-white">
                 <div class="row align-items-center m-h-100">
                     <div class="mx-auto col-md-8">
-                        <form class="needs-validation" method="post" action="{{ route('signup.store') }}">
+                        <form class="needs-validation" method="post" action="{{ route('signup.store') }}" enctype="multipart/form-data">
                                @csrf
                              
                             <div class="p-b-20 text-center">

@@ -17,8 +17,8 @@ class CreateUserExamTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('exam_id');
-            $table->unsignedBigInteger('face_recognition_log_id');
-            $table->date('appeared_on_date_time');
+            $table->unsignedBigInteger('face_recognition_log_id')->nullable();
+            $table->date('appeared_on_date_time')->nullable();
             
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

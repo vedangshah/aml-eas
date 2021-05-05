@@ -29,6 +29,14 @@ Route::group(['prefix' => 'jobseeker', 'middleware' => 'auth'], function() {
     Route::get('/enroll-user/{id}','JobseekerUserController@enrolled')->name('enroll-user');
     Route::get('/upexam','ExamCreateUserController@upcoming')->name('upexam');
     Route::get('/cexam','ExamCreateUserController@complete')->name('cexam');
+
+    Route::get('/verify-user/{examId}', 'ExamCreateUserController@verifyUser')->name('verifyUser');
+    Route::post('recognize-user', 'ExamCreateUserController@recognizeUser')->name('recognizeUser');
+    Route::post('upload-video', 'ExamCreateUserController@uploadVideo')->name('uploadVideo');
+
+    Route::get('exam-start/{examId}', 'ExamCreateUserController@examStart')->name('examStart');
+    Route::get('fetch-question/{examId}', 'ExamCreateUserController@fetchQuestion')->name('fetchQuestion');
+    Route::post('submit-answer/{examId}', 'ExamCreateUserController@submitAnswer')->name('submitAnswer');
 });
 
 Route::resource('signup', signupController::class)->except(['destroy']);
