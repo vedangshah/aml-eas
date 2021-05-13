@@ -73,21 +73,20 @@ class LoginUserController extends Controller
                 Log::info(Auth::user());
                 Log::info(Auth::user()->firstRole());
                 if(Auth::user()->firstRole() == 'Admin'){
-                return redirect()->route('company-user.create');
+                    return redirect()->route('company-user.create');
                 }
                 elseif (Auth::user()->firstRole() == 'Company') {
-                    return redirect()->route('exam-user.create');
+                    return redirect()->route('exam-user.index');
                 }
                 elseif (Auth::user()->firstRole() == 'JobSeeker') {
                     return view('jobseeker-registration.jobseeker');
                 }
-               
             }
             else {
                 Log::info("Not Authenticated");
                 // Add custom error key-value in validator object
                 $validator->errors()->add('login-failed', 'The entered credentials do not match our records. Please try again.');
-                return redirect()->route('login.create')
+                return redirect()->route('login')
                             ->withErrors($validator)
                             ->withInput();
             }
