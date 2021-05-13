@@ -22,7 +22,7 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'date_of_birth' => $faker->dateTimeThisCentury->format('Y-m-d'),
-        'password' => Hash::make('la'), // password
+        'password' => 'password', // password
         'address' => $faker->streetAddress,
         'contact_no' => $faker->phoneNumber,
         'company_name' => $faker->company,
