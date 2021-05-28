@@ -173,7 +173,7 @@
                 var photoSentCount = 0;
                 var avgSimilarityArray = [];
                 var sendPhotoInterval = setInterval(async () => {
-                    
+                    console.log("photoSentCount: "+photoSentCount);
                     let canvas = document.getElementById('capturedPhoto');
 
                     canvas.width = video.videoWidth;
@@ -182,7 +182,7 @@
                     var photo = canvas.toDataURL();
                     var data = new FormData();
                     data.append('photo', photo);
-                    if (photoSentCount < 2) { // should be 5
+                    if (photoSentCount < 5) { // should be 5
                         $.ajax({
                             type: "post",
                             url: "{{ route('recognizeUser') }}",
@@ -200,17 +200,20 @@
                         });
                     } else {
                         console.log('IN ELSE');
+                        console.log("avgSimilarityArray");
+                        console.log(avgSimilarityArray);
                         avgSimilarity = avgSimilarityArray.reduce( function (total, num) {
                             return total + num;
                         });
-
+                        console.log("avgSimilarity: "+avgSimilarity);
+                        console.log("photoSentCount: "+photoSentCount);
                         avgSimilarity = (avgSimilarity / photoSentCount);
-
+                        console.log("avgSimilarity: "+avgSimilarity);
                         if (mediaRecorder.state != 'inactive') {
                             video.pause();
                             mediaRecorder.stop();
                         }
-                        if (avgSimilarity < 0.30) {
+                        if (avgSimilarity < 0.20) {
                             if (recordedVideo) {
                                 var alertAfterRecognitionProcess = function () {
                                     Swal.fire({
@@ -255,7 +258,7 @@
                             }
 
                         } else {
-                            console.log('ESTIMATION IS LOWER THAN .30');
+                            console.log('ESTIMATION IS HIGHER THAN .30');
                             var alertAfterRecognitionProcess = function () {
                                 Swal.fire({
                                     icon: "error",
